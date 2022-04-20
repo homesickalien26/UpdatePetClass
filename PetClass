@@ -1,0 +1,28 @@
+namespace ObjectsClasses
+{
+    public class Pet
+    {
+
+        public static int totalNumberOfPets;
+        public static int sumOfAllPetAges;
+
+        internal static int Length;
+        public string name;
+        private string getName() { return name; }
+        public int age;
+        private int getAge() { return age; }
+        public string breed;
+        private string getBreed() { return breed; }
+
+        public Pet(string name, string breed, int age)
+        {
+            this.name = name;
+            this.age = age;
+            this.breed = breed;
+            Pet.sumOfAllPetAges = sumOfAllPetAges + age;
+
+        }
+
+    }
+}
+
