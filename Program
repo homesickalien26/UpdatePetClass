@@ -1,0 +1,39 @@
+namespace ObjectsClasses
+{
+    public class Program
+    {
+        public void Main(string[] args)
+        {
+            Console.Write("How many pets do you have?");
+            int size = int.Parse(Console.ReadLine());
+
+            Pet[] petsArray = new Pet[size];
+            Pet.totalNumberOfPets = 0;
+            Pet.sumOfAllPetAges = 0;
+
+
+            for (int i = 0; i < petsArray.Length; i++)
+            {
+                Console.Write("Enter Pet #" + (i + 1) + "'s Name:");
+                string petName = Console.ReadLine();
+                Console.WriteLine("What breed type is your pet" + (i + 1) + " ?");
+                string petBreed = Console.ReadLine();
+
+                Console.WriteLine("What is your Pets" + (i + 1) + "age");
+                int petAge = int.Parse(Console.ReadLine());
+
+                petsArray[i].name = petName;
+                petsArray[i].age = petAge;
+                petsArray[i].breed = petBreed;
+
+                Pet.sumOfAllPetAges = Pet.sumOfAllPetAges + petAge;
+                double sum = (double)Pet.sumOfAllPetAges / (double)Pet.totalNumberOfPets;
+                Console.WriteLine(sum);
+
+
+
+
+            }
+        }
+    }
+}
